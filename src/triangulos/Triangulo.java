@@ -1,5 +1,13 @@
 package triangulos;
-
+/**
+ * Classe abstrata que representa um triângulo genérico.
+ */
 public abstract class Triangulo {
-	public abstract String getNome();
+    
+    /**
+     * Obtém o nome do triângulo.
+     * 
+     * @return Uma string contendo o nome do triângulo.
+     */
+    public abstract String getNome();
 }
