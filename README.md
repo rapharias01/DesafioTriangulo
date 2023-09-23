@@ -8,28 +8,9 @@ Este é um programa simples em Java que permite ao usuário inserir as medidas d
    ```bash
    git clone https://github.com/rapharias01/DesafioTriangulo.git
    ```
+2. O programa solicitará que você insira os comprimentos dos lados do triângulo e, em seguida, determinará o tipo de triângulo com base nessas medidas.
 
-2. Navegue até o diretório onde o repositório foi clonado:
-
-   ```bash
-   cd DesafioTriangulo
-   ```
-
-3. Compile o programa:
-
-   ```bash
-   javac *.java
-   ```
-
-4. Execute o programa:
-
-   ```bash
-   java ProgramaMain
-   ```
-
-5. O programa solicitará que você insira os comprimentos dos lados do triângulo e, em seguida, determinará o tipo de triângulo com base nessas medidas.
-
-6. Siga as instruções na tela para continuar ou sair do programa.
+3. Siga as instruções na tela para continuar ou sair do programa.
 
 ## Funcionalidades
 - O programa suporta triângulos equiláteros, isósceles e escalenos.
