@@ -1,0 +1,51 @@
+CREATE TABLE PESSOAS (
+    ID int NOT NULL,
+    Nome varchar(255) NOT NULL,
+    Idade int,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE CARGO (
+    ID int NOT NULL,
+    NomeDoCargo varchar(255) NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE FUNCIONARIOS (
+    funcionariosID int NOT NULL,
+    pessoaID int NOT NULL,
+    cargoID int NOT NULL,
+    PRIMARY KEY (funcionariosID),
+    FOREIGN KEY (pessoaID) REFERENCES PESSOAS(ID),
+    FOREIGN KEY (cargoID) REFERENCES CARGO(ID)
+);
+
+INSERT INTO PESSOAS (id, nome, idade) VALUES (1, 'João', 30);
+INSERT INTO PESSOAS (id, nome, idade) VALUES (2, 'Maria', 25);
+INSERT INTO PESSOAS (id, nome, idade) VALUES (3, 'Pedro', 28);
+INSERT INTO PESSOAS (id, nome, idade) VALUES (4, 'Ana', 22);
+INSERT INTO PESSOAS (id, nome, idade) VALUES (5, 'Lucas', 35);
+INSERT INTO PESSOAS (id, nome, idade) VALUES (6, 'Clara', 27);
+INSERT INTO PESSOAS (id, nome, idade) VALUES (7, 'Gustavo', 29);
+INSERT INTO PESSOAS (id, nome, idade) VALUES (8, 'Bianca', 23);
+INSERT INTO PESSOAS (id, nome, idade) VALUES (9, 'Rafael', 31);
+INSERT INTO PESSOAS (id, nome, idade) VALUES (10, 'Julia', 26);
+
+
+INSERT INTO CARGO (id, NomeDoCargo) VALUES (1, 'Gerente');
+INSERT INTO CARGO (id, NomeDoCargo) VALUES (2, 'Assistente');
+INSERT INTO CARGO (id, NomeDoCargo) VALUES (3, 'Programador');
+
+INSERT INTO FUNCIONARIOS (funcionariosID, pessoaID, cargoID) VALUES (1, 1, 1); 
+INSERT INTO FUNCIONARIOS (funcionariosID, pessoaID, cargoID) VALUES (2, 2, 2); 
+INSERT INTO FUNCIONARIOS (funcionariosID, pessoaID, cargoID) VALUES (3, 3, 3);
+INSERT INTO FUNCIONARIOS (funcionariosID, pessoaID, cargoID) VALUES (4, 4, 1); 
+INSERT INTO FUNCIONARIOS (funcionariosID, pessoaID, cargoID) VALUES (5, 5, 2); 
+INSERT INTO FUNCIONARIOS (funcionariosID, pessoaID, cargoID) VALUES (6, 6, 3);
+INSERT INTO FUNCIONARIOS (funcionariosID, pessoaID, cargoID) VALUES (7, 7, 1); 
+INSERT INTO FUNCIONARIOS (funcionariosID, pessoaID, cargoID) VALUES (8, 8, 2); 
+INSERT INTO FUNCIONARIOS (funcionariosID, pessoaID, cargoID) VALUES (9, 9, 3);
+INSERT INTO FUNCIONARIOS (funcionariosID, pessoaID, cargoID) VALUES (10, 10, 1);
+
+SELECT C.NOMEDOCARGO, COUNT(F.pessoaID)
+FROM CARGO C, FUNCIONARIOS F
+WHERE C.ID = F.cargoID
+GROUP BY C.NOMEDOCARGO;
